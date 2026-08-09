@@ -1,6 +1,38 @@
 {
-  "name": "fluxtime-mobile",
+  "name": "mobile",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "dependencies": {
+    "@notifee/react-native": "^9.1.8",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "expo": "~57.0.11",
+    "expo-dev-client": "~57.0.10",
+    "expo-status-bar": "~57.0.1",
+    "react": "19.2.3",
+    "react-native": "0.86.2",
+    "react-native-safe-area-context": "~5.7.0",
+    "socket.io-client": "^4.8.3"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.2",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit",
+    "prebuild": "expo prebuild --clean",
+    "build:android:preview": "npx eas-cli build --platform android --profile preview",
+    "build:android": "npx eas-cli build --platform android --profile production"
+  },
   "private": true,
-  "version": "0.0.0",
-  "description": "FluxTime Android — a ser inicializado na Fase 4 do plano (Expo, para foreground service do cronômetro)."
+  "expo": {
+    "doctor": {
+      "reactNativeDirectoryCheck": {
+        "exclude": ["@notifee/react-native"]
+      }
+    }
+  }
 }
